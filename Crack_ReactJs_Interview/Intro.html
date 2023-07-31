@@ -1,0 +1,136 @@
+ReactJs:
+React is an open source, JavaScript library for developing user interface (UI)
+in web application. React is developed and released by Facebook.
+React is a tool for building user interface(UI).
+React is used to build single-page applications.
+Node.js and react.js -----> single threaded.
+
+React js creates a VIRTUAL DOM in memory.
+
+Instead of manipulating the browser's DOM directly, React 
+creates a virtual DOM in memory, where it does all the necessary
+manipulating, before making the changes in the browser DOM.
+React only changes what needs to be changed!
+
+React.JS History:
+Current version of React.JS is V18.0.0 (April 2022).
+Initial Release to the Public (V0.3.0) was in July 2013.
+React.JS was first used in 2011 for Facebook's Newsfeed feature.
+Facebook Software Engineer, Jordan Walke, created it.
+Current version of create-react-app is v5.0.1 (April 2022).
+
+Features:
+The salient features of React library are as follows −
+1) Solid base architecture.
+2) Extensible architecture.
+3) Component based library.
+4) JSX based design architecture.
+5) Declarative UI library.
+
+Benefits:
+Few benefits of using React library are as follows −
+1) Easy to learn.
+2) Easy to adept in modern as well as legacy application.
+3) Faster way to code a functionality.
+4) Availability of large number of ready-made component.
+5) Large and active community.
+
+Applications:
+Few popular websites powered by React library are listed below −
+1) Facebook, popular social media application.
+2) Instagram, popular photo sharing application.
+3) Netflix, popular media streaming application.
+4) Code Academy, popular online training application.
+5) Reddit, popular content sharing application.
+
+Babel compiler:
+Babel is a JavaScript compiler which compiles many variant (es2015, es6, etc.,) 
+of JavaScript into standard JavaScript code supported by all browsers.
+
+React Render HTML:
+React's goal is in many ways to render HTML in a web page.
+React renders HTML to the web page by using a function called createRoot() and its method render().
+
+React JSX:
+What is JSX?
+JSX stands for JavaScript XML.
+JSX allows us to write HTML in React.
+JSX makes it easier to write and add HTML in React.
+JSX converts HTML tags into react elements
+
+React Events:
+Just like HTML DOM events, React can perform actions based on user events.
+React has the same events as HTML: click, change, mouseover etc.
+
+React Lists:
+In React, you will render lists with some type of loop.
+The JavaScript map() array method is generally the preferred method.
+
+React Router:
+React Router is a JavaScript framework that lets us handle client and 
+server-side routing in React applications. It enables the creation of 
+single-page web or mobile apps that allow navigating without refreshing 
+the page. It also allows us to use browser history features while preserving 
+the right application view.
+
+Private Router:
+Path: /src/_components/PrivateRoute.jsx
+The react private route component renders child components (children) if the user 
+is logged in. If not logged in the user is redirected to the /login page with the return 
+url passed in the location state property.
+
+React Props:
+pass data from one component to another, as parameters.
+
+React Components:
+Components are like functions that return HTML elements.
+Components are independent and reusable bits of code. They serve the same purpose as JavaScript 
+functions, but work in isolation and return HTML.
+Components come in two types, Class components and Function components.
+
+Class component:
+Example:
+Create a Class component called Car
+
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
+}
+
+
+Functional component:
+Example:
+Create a Function component called Car
+
+function Car() {
+  return <h2>Hi, I am a Car!</h2>;
+}
+
+
+
+Difference between class component and functional component-
+
+-------------------------------------------------------------------------------------------------------------
+Sr.           Functional component                           Class component
+-------------------------------------------------------------------------------------------------------------
+1.      A functional component is just a                 A class component requires you to extend 
+        plain JavaScript pure function that              from React. Component and create a render 
+        accepts props as an argument and returns         function that returns a React element.
+        a React element(JSX).
+
+2.      Hooks can be easily used in                      It requires different syntax inside a
+        functional components to make                    class component to implement hooks(constructor).
+        them Stateful.
+
+3.      Constructors are not used.                       Constructor is used as it needs to
+                                                         store state. 
+    
+4.      Functional components cannot use React           Class components can use React lifecycle methods
+        lifecycle methods, such as componentDidMount.    (for example, componentDidMount, componentWillUnmount etc).
+
+
+
+
+
+                                                        

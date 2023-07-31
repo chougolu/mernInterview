@@ -1,0 +1,576 @@
+
+=>JavaScript Template String:
+  Back-Tics Syntax
+  Template Literals use back-ticks (``) rather than the quotes ("") to define a string:
+
+  Example:-
+
+  var name = "Golu";
+  var lastname = "Choudhary";
+
+  document.write(`Welcome ${name} ${lastname}`). //Welcome Golu Choudhary.
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+=>NaN - Not a Number
+  NaN is a JavaScript reserved word indicating that a number is not a legal number.
+
+  Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number):
+
+  Example:-
+  let x = 100 / "Apple"; //NaN
+
+  You can use the global JavaScript function isNaN() to find out if a value is a not a number:
+
+  Example:-
+  let x = 100 / "Apple";
+  isNaN(x); //true
+
+  Watch out for NaN. If you use NaN in a mathematical operation, the result will also be NaN:
+
+  Example
+  let x = NaN;
+  let y = 5;
+  let z = x + y; // NaN
+
+  Or the result might be a concatenation like NaN5:
+
+  Example
+  let x = NaN;
+  let y = "5";
+  let z = x + y; //NaN5
+
+  NaN is a number: typeof NaN returns number:
+
+  Example:-
+  typeof NaN; //number
+
+  Infinity
+  Infinity (or -Infinity) is the value JavaScript will return if you calculate a number outside the largest possible number.
+
+  Division by 0 (zero) also generates Infinity:
+
+  Example:-
+  let x =  2 / 0; //Infinity
+  let y = -2 / 0; //-Infinity
+
+  Infinity is a number: typeof Infinity returns number.
+
+  Example:-
+  typeof Infinity; //number
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+=>JavaScript Numbers
+
+  JavaScript has only one type of number. Numbers can be written with or without decimals.
+
+  Example:-
+  let x = 3.14;    // A number with decimals
+  let y = 3;       // A number without decimals
+
+  Extra large or extra small numbers can be written with scientific (exponent) notation:
+
+  Example:-
+  let x = 123e5;    // 12300000
+  let y = 123e-5;   // 0.00123
+
+  Floating Precision
+  Floating point arithmetic is not always 100% accurate:
+
+  let x = 0.2 + 0.1; //0.3
+
+  Adding Numbers and Strings:
+
+  If you add two numbers, the result will be a number:
+
+  Example:-
+  let x = 10;
+  let y = 20;
+  let z = x + y; //30
+
+  If you add two strings, the result will be a string concatenation:
+
+  Example:-
+  let x = "10";
+  let y = "20";
+  let z = x + y; //1020
+
+  If you add a number and a string, the result will be a string concatenation:
+
+  Example:-
+  let x = 10;
+  let y = "20";
+  let z = x + y; //1020
+
+  If you add a string and a number, the result will be a string concatenation:
+
+  Example:-
+  let x = "10";
+  let y = 20;
+  let z = x + y; //1020
+
+  A common mistake is to expect this result to be 30:
+
+  let x = 10;
+  let y = 20;
+  let z =x + y;
+  document.write(z) //30
+
+  let x = 10;
+  let y = 20;
+  let z ='output is ' + x + y;
+  document.write(z) //output is 1020
+
+  let x = 10;
+  let y = 20;
+  let z ='output is ' + (x + y);
+  document.write(z) //output is 30
+
+  A common mistake is to expect this result to be 102030:
+
+  Example:-
+  let x = 10;
+  let y = 20;
+  let z = "30";
+  let result = x + y + z; //3030
+
+  Note:-
+  The JavaScript interpreter works from left to right.
+  First 10 + 20 is added because x and y are both numbers.
+  Then 30 + "30" is concatenated because z is a string.
+
+  Numeric Strings
+  JavaScript strings can have numeric content:
+
+  let x = 100; // x is a number
+
+  let y = "100"; // y is a string
+  JavaScript will try to convert strings to numbers in all numeric operations:
+
+  This will work:
+
+  let x = "100";
+  let y = "10";
+  let z = x / y; //10
+
+  let x = "100";
+  let y = "10";
+  let z = x - y; //90
+
+  let x = "100";
+  let y = "10";
+  let z = x * y; //1000
+
+  let x = "100";
+  let y = "10";
+  let z = x + y; //10010
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+=>The Number.parseFloat() Method:
+
+  Number.parseFloat() parses a string and returns a number.
+  Spaces are allowed. Only the first number is returned:
+
+  let a = "200";
+  let b = parseFloat(a)
+  document.write(typeof(b)) //number
+
+  Number.parseFloat("10"); //10
+  Number.parseFloat("10.86868"); //10.86868
+  Number.parseFloat("10 20 30"); //10
+  Number.parseFloat("10 years"); //10
+  Number.parseFloat("years 10"); //NaN
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+=>The Number.parseInt() Method:
+
+  Number.parseInt() parses a string and returns a whole number.
+  Spaces are allowed. Only the first number is returned:
+
+  let a = "200";
+  let b = parseInt(a)
+  document.write(typeof(b)) //number
+
+  document.write(parseInt('10.86868')); //10
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+=>JavaScript Arrays
+
+  An array is a special variable, which can hold more than one value:
+
+  const cars = ["Saab", "Volvo", "BMW"];
+
+  Why Use Arrays?
+  If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:
+
+  let car1 = "Saab";
+  let car2 = "Volvo";
+  let car3 = "BMW";
+
+  You can also create an array, and then provide the elements:
+
+  Example:
+  const cars = [];
+  cars[0]= "Saab";
+  cars[1]= "Volvo";
+  cars[2]= "BMW";
+  //Saab,Volvo,BMW
+
+  Using the JavaScript Keyword new
+  The following example also creates an Array, and assigns values to it:
+
+  Example:
+  const cars = new Array("Saab", "Volvo", "BMW");
+  //Saab,Volvo,BMW
+
+  Accessing Array Elements
+  You access an array element by referring to the index number:
+
+  const cars = ["Saab", "Volvo", "BMW"];
+  cars[0]; //Saab
+  cars[1]; //Volvo
+  cars[2]; //BMW
+
+  Note: Array indexes start with 0.
+  [0] is the first element. [1] is the second element.
+
+  Changing an Array Element
+  This statement changes the value of the first element in cars:
+
+  cars[0] = "Opel";
+  Example
+  const cars = ["Saab", "Volvo", "BMW"];
+  cars[0] = "Opel"; //Opel,Volvo,BMW
+
+  Access the Full Array
+  With JavaScript, the full array can be accessed by referring to the array name:
+
+  Example:-
+  const cars = ["Saab", "Volvo", "BMW"];
+  document.write(cars); //Saab, Volvo, BMW
+
+
+  Arrays are ObjectS
+  Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.
+  But, JavaScript arrays are best described as arrays.
+  Arrays use numbers to access its "elements". In this example, person[0] returns John:
+
+  Array:
+  const person = ["John", "Doe", 46];
+  Objects use names to access its "members". In this example, person.firstName returns John:
+  person[0]; //John
+
+  Object:
+  const person = {
+                  firstName:"John",
+                  lastName:"Doe",
+                  age:46
+                 };
+  person.firstName; //John
+
+
+  Array Properties and Methods:-
+  The real strength of JavaScript arrays are the built-in array properties and methods:
+
+  cars.length   // Returns the number of elements
+  cars.sort()   // Sorts the array
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+=>The length Property:-
+  The length property of an array returns the length of an array (the number of array elements).
+
+  Example:-
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  let length = fruits.length; //4
+  
+  Note:- The length property is always one more than the highest array index.
+
+  Accessing the First Array Element
+  Example:-
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  let fruit = fruits[0]; //Banana
+
+  Accessing the Last Array Element
+  Example:-
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  let fruit = fruits[fruits.length - 1]; //Mango
+
+  Looping Array Elements
+  One way to loop through an array, is using a for loop:
+
+  Example:-
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  let fLen = fruits.length;
+
+  let text = "<ul>";
+  for (let i = 0; i < fLen; i++) {
+    text += "<li>" + fruits[i] + "</li>";
+  }
+  text += "</ul>";
+  
+  You can also use the Array.forEach() function:
+
+  Adding Array Elements
+  The easiest way to add a new element to an array is using the push() method:
+
+  Example:-
+  const fruits = ["Banana", "Orange", "Apple"];
+  fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+  // Banana,Orange,Apple,Lemon
+ 
+  New element can also be added to an array using the length property:
+
+  Example:-
+  const fruits = ["Banana", "Orange", "Apple"];
+  fruits[fruits.length] = "Lemon";  // Adds "Lemon" to fruits
+  // Banana,Orange,Apple,Lemon
+
+
+  WARNING !
+  Adding elements with high indexes can create undefined "holes" in an array:
+
+  Example:-
+  const fruits = ["Banana", "Orange", "Apple"];
+  fruits[6] = "Lemon";  // Creates undefined "holes" in fruits
+  //Banana,Orange,Apple,undefined,undefined,undefined,Lemon
+
+  How to Recognize an Array
+  A common question is: How do I know if a variable is an array?
+
+  The problem is that the JavaScript operator typeof returns "object":
+
+  const fruits = ["Banana", "Orange", "Apple"];
+  let type = typeof fruits; //object
+
+  The typeof operator returns object because a JavaScript array is an object.
+
+  Solution 1:
+  To solve this problem ECMAScript 5 (JavaScript 2009) defined a new method Array.isArray():
+
+  const fruits = ["Banana", "Orange", "Apple"];
+  Array.isArray(fruits); //true
+
+  Solution 2:
+  The instanceof operator returns true if an object is created by a given constructor:
+
+  const fruits = ["Banana", "Orange", "Apple"];
+
+  fruits instanceof Array;
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+=>JavaScript Array Methods:
+
+  1) The JavaScript method toString()
+
+     Converting Arrays to Strings
+     The JavaScript method toString() converts an array to a string of (comma separated) array values.
+
+     Example:
+     const fruits = ["Banana", "Orange", "Apple", "Mango"];
+     const newArr = fruits.toString(); //Banana,Orange,Apple,Mango
+
+
+  2) The JavaScript method join()
+
+     The join() method also joins all array elements into a string.
+     It behaves just like toString(), but in addition you can specify the separator:
+
+     Example:
+     const fruits = ["Banana", "Orange", "Apple", "Mango"];
+     fruits.join(" * "); //Banana * Orange * Apple * Mango
+
+
+   3)JavaScript Array pop()
+
+     The pop() method removes the last element from an array:
+
+     Example:
+     const fruits = ["Banana", "Orange", "Apple", "Mango"];
+     fruits.pop(); //Banana,Orange,Apple
+
+
+   4)JavaScript Array push()
+
+     The push() method adds a new element to an array (at the end):
+
+     Example:
+     const fruits = ["Banana", "Orange", "Apple", "Mango"];
+     fruits.push("Kiwi"); //Banana,Orange,Apple,Mango,Kiwi
+
+
+   5)JavaScript Array sift()
+
+     The shift() method removes the first array element and "shifts" all other elements to a lower index.
+
+     Example:
+     const fruits = ["Banana", "Orange", "Apple", "Mango"];
+     fruits.shift(); //Orange,Apple,Mango
+
+
+   6)JavaScript Array unsift()
+
+     The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
+
+     Example:
+     const fruits = ["Banana", "Orange", "Apple", "Mango"];
+     fruits.unshift("Lemon"); //Lemon,Orange,Apple,Mango
+
+
+   7)JavaScript Array delete()
+
+     Warning !
+     Array elements can be deleted using the JavaScript operator delete.
+     Using delete leaves undefined holes in the array.
+     Use pop() or shift() instead.
+
+     Example:
+     const fruits = ["Banana", "Orange", "Apple", "Mango"];
+     fruits[0] = Banana
+
+     delete fruits[0];
+     fruits[0] = undefined
+
+
+   8)JavaScript Array concat()
+
+     The concat() method creates a new array by merging (concatenating) existing arrays:
+     
+     Example:
+     const myGirls = ["Cecilie", "Lone"];
+     const myBoys = ["Emil", "Tobias", "Linus"];
+
+     const myChildren = myGirls.concat(myBoys); //Cecilie,Lone,Emil,Tobias,Linus
+
+     Example (Merging Three Arrays):
+
+     const arr1 = ["Cecilie", "Lone"];
+     const arr2 = ["Emil", "Tobias", "Linus"];
+     const arr3 = ["Robin", "Morgan"];
+     const myChildren = arr1.concat(arr2, arr3); //Cecilie,Lone,Emil,Tobias,Linus,Robin,Morgan
+
+     Example (Merging an Array with Values):
+
+     const arr1 = ["Emil", "Tobias", "Linus"];
+     const myChildren = arr1.concat("Peter"); //Emil,Tobias,Linus,Peter
+
+
+
+   9)JavaScript Array .flat()
+
+     Flattening an array is the process of reducing the dimensionality of an array.
+     The flat() method creates a new array with sub-array elements concatenated to a specified depth.
+
+     Example:
+     const myArr = [[1,2],[3,4],[5,6]];
+     const newArr = myArr.flat(); //1,2,3,4,5,6
+
+
+   10)JavaScript Array splice()
+
+      The splice() method can be used to add new items to an array:
+
+      Example:
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.splice(2, 0, "Lemon", "Kiwi"); //Banana,Orange,Lemon,Kiwi,Apple,Mango
+      fruits.splice(2, 2, "Lemon", "Kiwi"); //Banana,Orange,Lemon,Kiwi
+
+      Using splice() to Remove Elements
+      
+      Example:
+      With clever parameter setting, you can use splice() to remove elements without leaving "holes" in the array:
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.splice(0, 1); //Orange,Apple,Mango
+
+      Note:-
+          The first parameter (0) defines the position where new elements should be added (spliced in).
+          The second parameter (1) defines how many elements should be removed.
+          The rest of the parameters are omitted. No new elements will be added.
+
+
+   11)JavaScript Array slice()
+      
+      The slice() method slices out a piece of an array into a new array.
+      This example slices out a part of an array starting from array element 1 ("Orange"):
+
+      Example:
+      const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+      const citrus = fruits.slice(1); //Orange,Lemon,Apple,Mango
+
+      Note:-
+           The slice() method creates a new array.
+           The slice() method does not remove any elements from the source array.
+           This example slices out a part of an array starting from array element 3 ("Apple"):
+
+           Example:
+           const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+           const citrus = fruits.slice(3); //Apple,Mango
+
+     The slice() method can take two arguments like slice(1, 3).
+
+     The method then selects elements from the start argument, and up to (but not including) the end argument.
+
+     Example:
+     const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+     const citrus = fruits.slice(1, 3); //Orange,Lemon,
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+=>JavaScript Sorting Arrays:
+
+  The sort() method sorts an array alphabetically:
+
+  Example:
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  fruits.sort(); //Apple,Banana,Mango,Orange
+
+  Numeric Sort
+  By default, the sort() function sorts values as strings.
+
+  Example:
+  let arr = [5,4,3,2,1]
+  document.write(arr.sort()); //1,2,3,4,5
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+=>Reversing an Array:
+
+  The reverse() method reverses the elements in an array.
+  You can use it to sort an array in descending order:
+
+  Example:
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  fruits.reverse(); //Mango,Apple,Orange,Banana
+  
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  fruits.sort(); //Apple,Banana,Mango,Orange
+  fruits.reverse(); //Orange,Mango,Banana,Apple
+
+
+
+--------------------------------------------------------------------------------------------------------
+

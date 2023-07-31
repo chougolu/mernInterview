@@ -1,0 +1,43 @@
+React ES6 Variables:
+
+Variables:
+Before ES6 there was only one way of defining your variables: with the var keyword.
+Now, with ES6, there are three ways of defining your variables: var, let, and const.
+----------------------------------------------------------------------------------------------------
+KEYWORD  	SCOPE	                REDECLARATION & REASSIGNMENT	     HOISTING
+----------------------------------------------------------------------------------------------------
+var	        Global, Local	        yes & yes	                         yes, with default value
+let	        Global, Local, Block    no & yes	                         yes, without default value
+const	    Global, Local, Block	no & no	                             yes, without default value
+----------------------------------------------------------------------------------------------------
+
+Global scope:
+
+var a = 10;
+{
+    var b = 20;
+    console.log(b); //20
+    console.log(a); //10
+}
+console.log(b); //20
+console.log(a); //10
+
+Block scope:
+
+let a = 10;
+{
+    let b = 20;
+    console.log(b); //20
+    console.log(a); //10
+}
+console.log(b); //error
+console.log(a); //10
+
+const a = 10;
+{
+    const b = 20;
+    console.log(b); //20
+    console.log(a); //10
+}
+console.log(b); //error
+console.log(a); //10

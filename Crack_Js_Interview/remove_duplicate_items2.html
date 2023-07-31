@@ -1,0 +1,8 @@
+<script>
+// How to remove duplicate elements from JavaScript Array ?
+let arr = ["apple", "user", "apple", "amit"];
+let newArr = arr.filter((items,index)=>{
+    return arr.indexOf(items) === index;
+});
+console.log(newArr);
+</script>

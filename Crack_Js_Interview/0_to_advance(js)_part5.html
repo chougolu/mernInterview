@@ -1,0 +1,619 @@
+
+
+=> JavaScript if, else, and else if(Conditional statements--cs):
+
+Conditional statements are used to perform different actions based on different conditions.
+Conditional Statements
+Very often when you write code, you want to perform different actions for different decisions.
+You can use conditional statements in your code to do this.
+In JavaScript we have the following conditional statements:
+
+* Use if to specify a block of code to be executed, if a specified condition is true
+* Use else to specify a block of code to be executed, if the same condition is false
+* Use else if to specify a new condition to test, if the first condition is false
+* Use switch to specify many alternative blocks of code to be executed
+
+1) The if Statement
+Use the if statement to specify a block of JavaScript code to be executed if a condition is true.
+
+Syntax:
+if (condition) {
+  //  block of code to be executed if the condition is true
+}
+
+Single line statement:
+(condition) ? statement1 : statement2 
+
+
+ 2) The else Statement:
+Use the else statement to specify a block of code to be executed if the condition is false.
+
+if (condition) {
+  //  block of code to be executed if the condition is true
+} else {
+  //  block of code to be executed if the condition is false
+}
+
+
+3) The else if Statement
+Use the else if statement to specify a new condition if the first condition is false.
+
+Syntax:
+if (condition1) {
+  //  block of code to be executed if condition1 is true
+} else if (condition2) {
+  //  block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  //  block of code to be executed if the condition1 is false and condition2 is false
+}
+
+4) JavaScript Switch Statement
+The switch statement is used to perform different actions based on different conditions.
+
+The JavaScript Switch Statement
+Use the switch statement to select one of many code blocks to be executed.
+
+Syntax:
+switch(expression) {
+  case 1:
+    // code block
+    break;
+  case 2:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+This is how it works:
+
+1)The switch expression is evaluated once.
+2)The value of the expression is compared with the values of each case.
+3)If there is a match, the associated block of code is executed.
+4)If there is no match, the default code block is executed.
+
+Example:
+The getDay() method returns the weekday as a number between 0 and 6.
+(Sunday=0, Monday=1, Tuesday=2 ..)
+This example uses the weekday number to calculate the weekday name:
+
+var date = new Date();
+var day = date.getDay()
+
+switch (day) {
+  case 0: document.write('Today is Sunday');
+            break;
+  case 1: document.write('Today is Monday');
+            break;
+  case 2: document.write('Today is Tuesday');
+            break; 
+  case 3: document.write('Today is Wednesday');
+            break;
+  case 4: document.write('Today is Thursday');
+            break; 
+  case 5: document.write('Today is Friday');
+            break; 
+  default: document.write('Today is Saturday');
+}
+
+
+----------------------------------------------------------------------------------------
+
+
+=> JavaScript Loops
+Loops are handy, if you want to run the same code over and over again, each time with a different value.
+Often this is the case when working with arrays:
+
+1) The For Loop
+The for statement creates a loop with 3 optional expressions:
+Syntax:
+for (initialize; condition ; ++/--) {
+  // code block to be executed
+}
+
+
+2) The For In Loop
+The JavaScript for in statement loops through the properties of an Object:
+Syntax:
+for (key in object) {
+  // code block to be executed
+}
+Example:
+const numbers = [45, 4, 9, 16, 25];
+for (let x in numbers) {
+  console.log(x); //0,1,2,3,4
+}
+in----index
+
+
+3) The For Of Loop
+The JavaScript for of statement loops through the values of an iterable object.
+It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:
+Syntax
+for (variable of iterable) {
+  // code block to be executed
+}
+Example:
+const numbers = [45, 4, 9, 16, 25];
+for (let x of numbers) {
+  console.log(x); //45, 4, 9, 16, 25
+}
+in----value/items
+
+
+4) The While Loop
+The while loop loops through a block of code as long as a specified condition is true.
+Syntax:
+initialize;
+while (condition) {
+  // code block to be executed
+  ++/--
+}
+
+
+5) The Do While Loop
+The do while loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.
+Syntax:
+initialize;
+do {
+  // code block to be executed
+  ++/--
+}
+while (condition);
+Example:
+let i = 0;
+do {
+  document.write(i); //0,1,2,3,4,5,6,7,8,9
+  i++;
+}
+while (i < 10); 
+
+
+----------------------------------------------------------------------------------------
+
+
+=> JavaScript Break and Continue
+
+The break statement "jumps out" of a loop.
+The continue statement "jumps over" one iteration in the loop.
+
+1) The Break Statement:
+You have already seen the break statement used in an earlier chapter of this tutorial. It was used to "jump out" of a switch() statement.
+The break statement can also be used to jump out of a loop:
+Example:
+for (let i = 1; i<=10; i++ ){
+    if(i === 5){
+      break;
+    }
+    document.write(i); //1,2,3,4
+  }
+
+2) The Continue Statement:
+The continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.
+This example skips the value of 3:
+Example:
+for (let i = 0; i < 10; i++) {
+  if (i === 3) { 
+    continue;
+     }
+  document.write(i); //1,2,4,5,6,7,8,9
+}
+
+
+---------------------------------------------------------------------------------------------
+
+
+=> JavaScript Sets:
+A JavaScript Set is a collection of unique values.
+
+Each value can only occur once in a Set.
+
+Essential Set Methods
+---------------------------------------------------------------------
+Method	         Description
+---------------------------------------------------------------------
+new Set()	    Creates a new Set
+add()	        Adds a new element to the Set
+delete()	    Removes an element from a Set
+has()	        Returns true if a value exists in the Set
+forEach()	    Invokes a callback for each element in the Set
+values()	    Returns an iterator with all the values in a Set
+---------------------------------------------------------------------
+
+Property	     Description
+---------------------------------------------------------------------
+size	        Returns the number of elements in a Set
+
+Example:
+// Create a Set
+const letters = new Set(["a","b","c"]);
+
+
+How to Create a Set
+You can create a JavaScript Set by:
+
+1)Passing an Array to new Set()
+2)Create a new Set and use add() to add values
+3)Create a new Set and use add() to add variables
+
+The new Set() Method
+Pass an Array to the new Set() constructor:
+
+Example:
+// Create a Set
+const letters = new Set(["a","b","c"]);
+document.write(typeof(letters)); //object
+document.write(letters.size); //3
+
+1) The add() Method:
+Example:
+// Create a Set
+const letters = new Set(["a","b","c"]);
+letters.add("d");
+document.write(letters); //a,b,c,d
+document.write(letters.size); //4
+
+2) The forEach() Method
+The forEach() method invokes (calls) a function for each Set element:
+Example:
+const letters = new Set(["a","b","c"]);
+var store ="";
+letters.forEach((item,index)=>{
+  store +=item
+});
+document.write(store); //a,b,c
+
+3) The values() Method
+The values() method returns a new iterator object containing all the values in a Set:
+Example:
+letters.values()   // Returns [object Set Iterator]
+
+4) The delete() Method
+Removes an element from a Set
+Example:
+const letters = new Set(["a","b","c"]);
+console.log(letters.delete('c')); //true
+console.log(letters.size); //2
+
+5) The has() Method 	
+Returns true if a value exists in the Set
+Example:
+const letters = new Set(["a","b","c"]);
+console.log(letters.has('c')); //true
+console.log(letters.has('d')); //false
+
+
+----------------------------------------------------------------------------------------
+
+
+=> JavaScript Maps
+A Map holds key-value pairs where the keys can be any datatype.
+A Map remembers the original insertion order of the keys.
+
+Essential Map Methods:
+-----------------------------------------------------
+Method	               Description
+-----------------------------------------------------
+new Map()	           Creates a new Map
+set()	               Sets the value for a key in a Map
+get()	               Gets the value for a key in a Map
+delete()	           Removes a Map element specified by the key
+has()	               Returns true if a key exists in a Map
+forEach()	           Calls a function for each key/value pair in a Map
+entries()	           Returns an iterator with the [key, value] pairs in a Map
+
+------------------------------------------------------
+Property	             Description
+------------------------------------------------------
+size	               Returns the number of elements in a Map
+Example:
+// Create a Map
+var stDetails = new Map([
+  ["name","golu"],
+  ["lName","choudhary"],
+  ["contact",9522380018],
+  ["age",22]
+]);
+
+
+
+How to Create a Map
+You can create a JavaScript Map by:
+
+Passing an Array to new Map()
+Create a Map and use Map.set()
+The new Map() Method
+You can create a Map by passing an Array to the new Map() constructor:
+
+Example:
+// Create a Map
+var stDetails = new Map([
+  ["name","golu"],
+  ["lName","choudhary"],
+  ["contact",9522380018],
+  ["age",22]
+]);
+
+
+1) The set() Method
+You can add elements to a Map with the set() method:
+Example:
+// Create a Map
+var stDetails = new Map();
+stDetails.set("name","golu");
+stDetails.set("lName","choudhary");
+stDetails.set("contact",9522380018);
+stDetails.set("age",22);
+
+document.write(stDetails.size); //4
+
+The set() method can also be used to change existing Map values:
+Example:
+stDetails.set("age", 21);
+
+
+2) The get() Method
+The get() method gets the value of a key in a Map:
+Example:
+// Create a Map
+var stDetails = new Map([
+  ["name","golu"],
+  ["lName","choudhary"],
+  ["contact",9522380018],
+  ["age",22]
+]);
+
+document.write(stDetails.get("name")); //golu
+
+
+3) The size Property
+The size property returns the number of elements in a Map:
+Example:
+// Create a Map
+var stDetails = new Map([
+  ["name","golu"],
+  ["lName","choudhary"],
+  ["contact",9522380018],
+  ["age",22]
+]);
+
+document.write(stDetails.size); //4
+
+
+4) The delete() Method
+The delete() method removes a Map element:
+Example:
+var stDetails = new Map([
+  ["name","golu"],
+  ["lName","choudhary"],
+  ["contact",9522380018],
+  ["age",22]
+]);
+
+document.write(stDetails.delete("contact")); //true
+document.write(stDetails.size); //3
+
+
+5) The has() Method
+The has() method returns true if a key exists in a Map:
+Example:
+var stDetails = new Map([
+  ["name","golu"],
+  ["lName","choudhary"],
+  ["contact",9522380018],
+  ["age",22]
+]);
+
+document.write(stDetails.has("name")); //true
+document.write(stDetails.has("rollNumber")); //false
+
+
+6) The forEach() Method
+The forEach() method calls a function for each key/value pair in a Map:
+Example:
+var stDetails = new Map([
+  ["name","golu"],
+  ["lName","choudhary"],
+  ["contact",9522380018],
+  ["age",22]
+]);
+var store = "";
+stDetails.forEach((value,key)=>{
+  store += key + '=' + value + '</br>';
+})
+
+document.write(store);
+output: 
+name = golu
+lName = choudhary
+contact = 9522380018
+age = 22
+
+
+------------------------------------------------------------------------------------------
+
+
+=> JavaScript typeof:
+In JavaScript there are 5 different data types that can contain values:
+
+string
+number
+boolean
+object
+function
+
+There are 6 types of objects:
+
+Object
+Date
+Array
+String
+Number
+Boolean
+
+And 2 data types that cannot contain values:
+
+null
+undefined
+The typeof Operator
+
+You can use the typeof operator to find the data type of a JavaScript variable.
+
+Example:
+typeof "John"                 // Returns "string"
+typeof 3.14                   // Returns "number"
+typeof NaN                    // Returns "number"
+typeof false                  // Returns "boolean"
+typeof [1,2,3,4]              // Returns "object"
+typeof {name:'John', age:34}  // Returns "object"
+typeof new Date()             // Returns "object"
+typeof function () {}         // Returns "function"
+typeof myCar                  // Returns "undefined" *
+typeof null                   // Returns "object"
+
+
+------------------------------------------------------------------------------------------
+
+
+=> JavaScript Type Conversion:
+1)Converting Strings to Numbers
+2)Converting Numbers to Strings
+3)Converting Dates to Numbers
+4)Converting Numbers to Dates
+5)Converting Booleans to Numbers
+6)Converting Numbers to Booleans
+
+
+1) onverting Strings to Numbers
+The global method Number() converts a variable (or a value) into a number.
+A numeric string (like "3.14") converts to a number (like 3.14).
+An empty string (like "") converts to 0.
+A non numeric string (like "John") converts to NaN (Not a Number).
+Examples:
+These will convert:
+
+Number("3.14"); //3.14
+Number(Math.PI); //3.141592653589793
+Number(" "); //0
+Number(""); //0
+These will not convert:
+
+Number("99 88"); //NaN
+Number("John"); //NaN
+
+
+2) Converting Numbers to Strings
+The global method String() can convert numbers to strings.
+It can be used on any type of numbers, literals, variables, or expressions:
+Example:
+String(x)         // returns a string from a number variable x
+String(123)       // returns a string from a number literal 123
+String(100 + 23)  // returns a string from a number from an expression(123)
+
+
+3) Converting Dates to Numbers
+The global method Number() can be used to convert dates to numbers.
+Example:
+var d = new Date();
+Number(d)          // returns 1404568027739
+
+
+4) Converting Dates to Strings
+The global method String() can convert dates to strings.
+Example:
+var d = new Date();
+String(d)  // returns "Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)"
+
+
+5) Converting Booleans to Numbers
+The global method Number() can also convert booleans to numbers.
+Example:
+Number(false)     // returns 0
+Number(true)      // returns 1
+
+
+6) Converting Booleans to Strings
+The global method String() can convert booleans to strings.
+Example:
+String(false)      // returns "false"
+String(true)       // returns "true"
+
+
+=> Automatic Type Conversion:
+When JavaScript tries to operate on a "wrong" data type, it will try to convert the value to a "right" type.
+The result is not always what you expect:
+
+5 + null    // returns 5         because null is converted to 0
+"5" + null  // returns "5null"   because null is converted to "null"
+"5" + 2     // returns "52"      because 2 is converted to "2"
+"5" - 2     // returns 3         because "5" is converted to 5
+"5" * "2"   // returns 10        because "5" and "2" are converted to 5 and 2
+
+-------------------------------------------------------------------------------
+Method	                        Description
+-------------------------------------------------------------------------------
+Number()	              Returns a number, converted from its argument
+parseFloat()	          Parses a string and returns a floating point number
+parseInt()	            Parses a string and returns an integer
+
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+The Unary + Operator                                                           |
+The unary + operator can be used to convert a variable to a number:            |
+                                                                               |
+Example:                                                                       |
+let y = "5";------>typeof(y)------>string                                      | 
+let x = + y;------>typeof(x)------>number                                      |
+--------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+
+
+=> JavaScript Regular Expressions
+A regular expression is a sequence of characters that forms a search pattern.
+The search pattern can be used for text search and text replace operations.
+
+What Is a Regular Expression?
+A regular expression is a sequence of characters that forms a search pattern.
+When you search for data in a text, you can use this search pattern to describe what you are searching for.
+A regular expression can be a single character, or a more complicated pattern.
+Regular expressions can be used to perform all types of text search and text replace operations.
+
+Syntax:
+/pattern/modifiers;
+
+Example:
+/w3schools/i;
+
+Example explained:
+/w3schools/i  is a regular expression.
+w3schools  is a pattern (to be used in a search).
+i  is a modifier (modifies the search to be case-insensitive).
+
+=> Using String Methods
+In JavaScript, regular expressions are often used with the two string methods: search() and replace().
+The search() method uses an expression to search for a match, and returns the position of the match.
+The replace() method returns a modified string where the pattern is replaced.
+
+Example:
+
+let text = "Visit W3Schools!";
+let n = text.search("W3Schools"); //6
+
+let text = "Visit W3Schools!";
+let n = text.replace("W3Schools", "Microsoft"); //Visit Microsoft!
+
+
+=> Using String search() and replace() With a Regular Expression
+
+Example:
+
+Use a regular expression to do a case-insensitive search for "w3schools" in a string:
+let text = "Visit W3Schools";
+let n = text.search(/w3schools/i); //6
+
+Use a case insensitive regular expression to replace Microsoft with W3Schools in a string:
+let text = "Visit W3Schools";
+let n = text.replace(/w3schools/i , "Microsoft"); //Visit Microsoft!

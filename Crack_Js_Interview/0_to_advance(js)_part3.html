@@ -1,0 +1,351 @@
+
+=>JavaScript Array Iteration
+  Array iteration methods operate on every array item.
+
+
+01) JavaScript Array forEach():
+The forEach() method calls a function (a callback function) once for each array element.
+
+Example:
+const numbers = [45, 4, 9, 16, 25];
+let txt = "";
+numbers.forEach(myFunction);
+
+function myFunction(value, index, array) {
+  txt += value + "<br>";
+}
+
+console.log(numbers); //45,4,9,16,25
+
+
+02) JavaScript Array map()
+
+The map() method creates a new array by performing a function on each array element.
+The map() method does not execute the function for array elements without values.
+The map() method does not change the original array.
+This example multiplies each array value by 2:
+
+Example:
+const numbers = [45, 4, 9, 16, 25];
+const newArr = numbers.map((item,index)=>{
+  return item >= 9;
+})
+console.log(newArr); //45,9,16,25
+
+
+03) JavaScript Array flatMap()
+
+ES2019 added the Array flatMap() method to JavaScript.
+The flatMap() method first maps all elements of an array and then creates a new array by flattening the array.
+
+Example:
+const myArr = [1, 2, 3, 4, 5, 6];
+const newArr = myArr.flatMap((item,index)=>{
+    return item*2
+});
+document.write(newArr); //2,4,6,8,10,12
+
+
+04) JavaScript Array filter()
+
+The filter() method creates a new array with array elements that pass a test.
+This example creates a new array from elements with a value larger than 18:
+
+Example:
+const numbers = [45, 4, 9, 16, 25];
+const over18 = numbers.filter((item,index)=>{
+  return item >=18;
+});
+document.write(over18); //45,25
+
+
+05) JavaScript Array reduce()
+
+The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+The reduce() method works from left-to-right in the array. See also reduceRight().
+The reduce() method does not reduce the original array.
+
+This example finds the sum of all numbers in an array:
+const numbers = [45, 4, 9, 16, 25];
+let sum = numbers.reduce((total, value )=>{
+     return total + value;
+     
+     }
+); 
+document.write(sum); //99
+
+
+06) JavaScript Array every()
+
+The every() method checks if all array values pass a test.
+This example checks if all array values are larger than 18:
+
+Example:
+const numbers = [45, 4, 9, 16, 25];
+let allOver18 = numbers.every((value, index, array)=>{
+  return value > 18;
+});
+document.write(allOver18); //false
+
+
+07) JavaScript Array some()
+
+The some() method checks if some array values pass a test.
+This example checks if some array values are larger than 18:
+
+Example:
+const numbers = [45, 4, 9, 16, 25];
+let someOver18 = numbers.some((item,index)=>{
+  return item > 18;
+});
+document.write(someOver18); //true
+
+
+08) JavaScript Array indexOf()
+
+The indexOf() method searches an array for an element value and returns its position.
+Note: The first item has position 0, the second item has position 1, and so on.
+
+Example:
+Search an array for the item "Apple":
+
+const fruits = ["Apple", "Orange", "Apple", "Mango"];
+let position = fruits.indexOf("Apple") + 1; //Apple is found in position 1
+
+
+09) JavaScript Array lastIndexOf()
+
+Array.lastIndexOf() is the same as Array.indexOf(), but returns the position of the last occurrence of the specified element.
+
+Example:
+
+const fruits = ["Apple", "Orange", "Apple", "Mango"];
+fruits.lastIndexOf("Apple"); //2
+
+
+10) JavaScript Array find()
+
+The find() method returns the value of the first array element that passes a test function.
+
+Example:
+This example finds (returns the value of) the first element that is larger than 18:
+
+
+
+11) JavaScript Array findIndex()
+
+The findIndex() method returns the index of the first array element that passes a test function.
+
+Example:
+This example finds the index of the first element that is larger than 18:
+
+const arr = [4, 9, 16, 25, 29];
+let newArr = arr.findIndex((item,index)=>{
+  return item > 18
+});
+document.write(newArr); //3
+
+
+
+12) JavaScript Array.from()
+
+The Array.from() method returns an Array object from any object with a length property or any iterable object.
+Example:
+Create an Array from a String:
+
+let newArr = Array.from("ABCDEFG");
+document.write(newArr); //A,B,C,D,E,F,G
+
+
+
+14) JavaScript Array Keys()
+
+The Array.keys() method returns an Array Iterator object with the keys of an array.
+
+Example:
+Create an Array Iterator object, containing the keys of the array:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const keys = fruits.keys();
+
+let text = "";
+for (let x of keys) {
+  text += x + "<br>";
+}
+document.write(text); //0,1,2,3
+
+
+
+15) JavaScript Array entries()
+Example
+Create an Array Iterator, and then iterate over the key/value pairs:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const f = fruits.entries();
+var text = "";
+for (let x of f) {
+  text += x;
+}
+document.write(text); //0,Banana1,Orange2,Apple3,Mango
+
+The entries() method returns an Array Iterator object with key/value pairs:
+
+[0, "Banana"]
+[1, "Orange"]
+[2, "Apple"]
+[3, "Mango"]
+
+The entries() method does not change the original array.
+
+
+16) JavaScript Array includes()
+
+ECMAScript 2016 introduced Array.includes() to arrays. This allows us to check if an element is present in an array (including NaN, unlike indexOf).
+
+Example:
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.includes("Mango"); // true
+
+
+
+17) JavaScript Array Spread (...)
+The ... operator expands an iterable (like an array) into more elements:
+
+Example:
+const q1 = ["Jan", "Feb", "Mar"];
+const q2 = ["Apr", "May", "Jun"];
+const q3 = ["Jul", "Aug", "Sep"];
+const q4 = ["Oct", "Nov", "Dec"];
+
+const year = [...q1, ...q2, ...q3, ...q4]; 
+document.write(year); //Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+=>JavaScript Array Const
+
+ECMAScript 2015 (ES6)
+In 2015, JavaScript introduced an important new keyword: const.
+
+It has become a common practice to declare arrays using const:
+
+Example:
+const cars = ["Saab", "Volvo", "BMW"]; //Saab,Volvo,BMW
+
+=>Cannot be Reassigned
+An array declared with const cannot be reassigned:
+
+Example:
+const cars = ["Saab", "Volvo", "BMW"];
+cars = ["Toyota", "Volvo", "Audi"];    // ERROR
+
+
+Arrays are Not Constants
+The keyword const is a little misleading.
+
+It does NOT define a constant array. It defines a constant reference to an array.
+Because of this, we can still change the elements of a constant array.
+
+Elements Can be Reassigned
+You can change the elements of a constant array:
+
+Example
+// You can create a constant array:
+const cars = ["Saab", "Volvo", "BMW"];
+
+// You can change an element:
+cars[0] = "Toyota"; //Toyota,Volvo,BMW
+
+// You can add an element:
+cars.push("Audi"); //Toyota,Volvo,BMW,Audi
+
+
+=>Assigned when Declared
+
+JavaScript const variables must be assigned a value when they are declared:
+Meaning: An array declared with const must be initialized when it is declared.
+Using const without initializing the array is a syntax error:
+
+Example:
+This will not work:
+
+const cars;
+cars = ["Saab", "Volvo", "BMW"];
+
+Arrays declared with var can be initialized at any time.
+You can even use the array before it is declared:
+
+Example:
+This is OK:
+
+cars = ["Saab", "Volvo", "BMW"];
+var cars;
+
+
+Const Block Scope
+An array declared with const has Block Scope.
+
+An array declared in a block is not the same as an array declared outside the block:
+
+Example:
+const cars = ["Saab", "Volvo", "BMW"];
+// Here cars[0] is "Saab"
+{
+  const cars = ["Toyota", "Volvo", "BMW"];
+  // Here cars[0] is "Toyota"
+}
+// Here cars[0] is "Saab"
+An array declared with var does not have block scope:
+
+Example:
+var cars = ["Saab", "Volvo", "BMW"];
+// Here cars[0] is "Saab"
+{
+  var cars = ["Toyota", "Volvo", "BMW"];
+  // Here cars[0] is "Toyota"
+}
+// Here cars[0] is "Toyota"
+
+
+Redeclaring Arrays
+Redeclaring an array declared with var is allowed anywhere in a program:
+
+Example:
+var cars = ["Volvo", "BMW"];   // Allowed
+var cars = ["Toyota", "BMW"];  // Allowed
+cars = ["Volvo", "Saab"];      // Allowed
+Redeclaring or reassigning an array to const, in the same scope, or in the same block, is not allowed:
+
+Example:
+var cars = ["Volvo", "BMW"];     // Allowed
+const cars = ["Volvo", "BMW"];   // Not allowed
+{
+  var cars = ["Volvo", "BMW"];   // Allowed
+  const cars = ["Volvo", "BMW"]; // Not allowed
+}
+Redeclaring or reassigning an existing const array, in the same scope, or in the same block, is not allowed:
+
+Example:
+const cars = ["Volvo", "BMW"];   // Allowed
+const cars = ["Volvo", "BMW"];   // Not allowed
+var cars = ["Volvo", "BMW"];     // Not allowed
+cars = ["Volvo", "BMW"];         // Not allowed
+
+{
+  const cars = ["Volvo", "BMW"]; // Allowed
+  const cars = ["Volvo", "BMW"]; // Not allowed
+  var cars = ["Volvo", "BMW"];   // Not allowed
+  cars = ["Volvo", "BMW"];       // Not allowed
+}
+Redeclaring an array with const, in another scope, or in another block, is allowed:
+
+Example:
+const cars = ["Volvo", "BMW"];   // Allowed
+{
+  const cars = ["Volvo", "BMW"]; // Allowed
+}
+{
+  const cars = ["Volvo", "BMW"]; // Allowed
+}

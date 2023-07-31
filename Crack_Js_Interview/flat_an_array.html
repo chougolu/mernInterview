@@ -1,0 +1,31 @@
+<script>
+    // how to flat an array 
+    /*
+        1. using flat() function
+   
+        let arr = [1, 2, [3, [4, 5, 6], 7], 8];
+        // using : arr.flat(depth)
+        let flatArr = arr.flat(2);
+        console.log(flatArr); 
+   /*
+
+    /*
+        2. using for loop 
+    */
+    //let arr = [1, [2], [[3,4]], [[[5,6,7]]]];
+    let arr = [1, 2, [3], [[4,5]],6];
+    let result = [];
+    for(let i = 0; i<arr.length; i++) 
+    {
+        if(Array.isArray(arr[i]))
+        {
+            //console.log(...arr[i]);
+            arr.push(...arr[i]);
+        }
+        else {
+            result.push(arr[i]);
+        }
+    }
+    console.log(result);
+
+</script>

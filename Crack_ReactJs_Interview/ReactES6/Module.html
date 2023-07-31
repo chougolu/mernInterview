@@ -1,0 +1,43 @@
+React ES6 Modules;
+
+Modules:
+1) JavaScript modules allow you to break up your code into separate files.
+2) This makes it easier to maintain the code-base.
+3) ES Modules rely on the import and export statements.
+
+
+Export file---> persion.js
+
+first way-
+export var name = "Golu";
+export var lastName = "Choudhary";
+
+second way-
+var name = "Golu";
+var lastName = "Choudhary";
+export {name,lastName};
+
+third way-
+const fullname = () =>{
+    var name = "Golu";
+    var lastName = "Choudhary";
+    return name + lastName;
+}
+export default fullname;
+
+Import file---> main.js
+
+import for first & second way.
+-----------------------------------------
+import {name,lastName} from './persion.js';
+
+console.log(name,lastName); //Golu Choudhary
+-----------------------------------------
+
+
+import for third way.
+-----------------------------------------
+import fullname from './persion.js';
+
+console.log(fullname); //Golu Choudhary
+-----------------------------------------

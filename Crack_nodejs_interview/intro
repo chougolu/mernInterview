@@ -1,0 +1,204 @@
+What is Node.js?
+
+Node.js is an open-source, cross-platform JavaScript runtime
+environment and library for running web applications outside 
+the client's browser. Ryan Dahl developed it in 2009.it uses an asynchronous.
+Node.js runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.).
+
+
+------------------------------------------------------------------------------------------------
+
+
+Why Do We Use NodeJs?
+
+1) NodeJs is built on Google Chrome’s V8 engine, and for this reason its 
+execution time is very fast and it runs very quickly.
+
+2) There are more than 50,000 bundles available in the Node Package Manager 
+and for that reason developers can import any of the packages any time according 
+to their needed functionality for which a lot of time is saved.
+
+
+------------------------------------------------------------------------------------------------
+
+
+What Can Node.js Do?
+
+Node.js can generate dynamic page content.
+Node.js can create, open, read, write, delete, and close files on the server.
+Node.js can collect form data.
+Node.js can add, delete, modify data in your database.
+
+
+------------------------------------------------------------------------------------------------
+
+
+What is a Module in Node.js?
+
+Consider modules to be the same as JavaScript libraries.
+A set of functions you want to include in your application.
+
+Include Modules
+To include a module, use the require() function with the name of the module:
+
+var http = require('http');
+
+Create Your Own Modules:
+You can create your own modules, and easily include them in your applications.
+The following example creates a module that returns a date and time object:
+
+ExampleGet your own Node.js Server
+Create a module that returns the current date and time:
+
+exports.myDateTime = function () {
+  return Date();
+};
+
+Use the exports keyword to make properties and methods available outside the module file.
+Save the code above in a file called "myfirstmodule.js"
+
+Include Your Own Module
+Now you can include and use the module in any of your Node.js files.
+
+Example:
+Use the module "myfirstmodule" in a Node.js file:
+
+---------------------------------------------------------------------
+var http = require('http');
+var dt = require('./myfirstmodule');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write("The date and time are currently: " + dt.myDateTime());
+  res.end();
+}).listen(8080);
+---------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+
+
+Node.js HTTP Module.
+The Built-in HTTP Module
+Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
+
+To include the HTTP module, use the require() method:
+
+var http = require('http');
+Node.js as a Web Server
+The HTTP module can create an HTTP server that listens to server ports and gives a response back to the client.
+
+Use the createServer() method to create an HTTP server:
+
+ExampleGet your own Node.js Server
+var http = require('http');
+
+//create a server object:
+http.createServer(function (req, res) {
+  res.write('Hello World!'); //write a response to the client
+  res.end(); //end the response
+}).listen(8080); //the server object listens on port 8080
+The function passed into the http.createServer() method, will be executed when someone tries to access the computer on port 8080.
+
+
+------------------------------------------------------------------------------------------------
+
+
+Node.js File System Module(fs)
+include the File System module, use the require() method:
+
+var fs = require('fs');
+
+Common use for the File System module:
+Read files        =>       fs.readFile("fileName with extention");
+Create files      =>       fs.appendFile("fileName with extention","content");
+Update files      =>       fs.appendFile("fileName with extention","updatedText");
+Delete files      =>       fs.unlink("fileName with extention");
+Rename files      =>       fs.rename("fileName with extention","updatedFileName");
+
+
+------------------------------------------------------------------------------------------------
+
+
+What is NPM?
+NPM is a node package manager for Node.js packages, or modules.
+
+
+------------------------------------------------------------------------------------------------
+
+
+What is a Package?
+A package in Node.js contains all the files you need for a module.
+Modules are JavaScript libraries you can include in your project.
+
+
+------------------------------------------------------------------------------------------------
+
+
+Download a Package:
+
+Downloading a package is very easy.
+Open the command line interface and tell NPM to download the package you want.
+I want to download a package called "upper-case":
+
+Download "upper-case":
+
+C:\Users\Your Name>npm install upper-case
+
+
+------------------------------------------------------------------------------------------------
+
+
+Events in Node.js
+Every action on a computer is an event. Like when a connection is made or a file is opened.
+
+Objects in Node.js can fire events, like the readStream object fires events when opening and closing a file:
+
+ExampleGet your own Node.js Server
+var fs = require('fs');
+var rs = fs.createReadStream('./demofile.txt');
+rs.on('open', function () {
+  console.log('The file is open');
+});
+
+
+------------------------------------------------------------------------------------------------
+
+
+Node.js Built-in Modules
+Node.js has a set of built-in modules which you can use without any further installation.
+
+Here is a list of the built-in modules of Node.js version 6.10.3:
+
+------------------------------------------------------------------------------------------
+Module	                              Description
+------------------------------------------------------------------------------------------
+assert	                       Provides a set of assertion tests
+buffer	                       To handle binary data
+child_process                	 To run a child process
+cluster	                       To split a single Node process into multiple processes
+crypto	                       To handle OpenSSL cryptographic functions
+dgram	                         Provides implementation of UDP datagram sockets
+dns	                           To do DNS lookups and name resolution functions
+domain	                       Deprecated. To handle unhandled errors
+events	                       To handle events
+fs	                           To handle the file system
+http	                         To make Node.js act as an HTTP server
+https	                         To make Node.js act as an HTTPS server.
+net	                           To create servers and clients
+os	                           Provides information about the operation system
+path	                         To handle file paths
+punycode	                     Deprecated. A character encoding scheme
+querystring	                   To handle URL query strings
+readline	                     To handle readable streams one line at the time
+stream	                       To handle streaming data
+string_decoder	               To decode buffer objects into strings
+timers	                       To execute a function after a given number of milliseconds
+tls	                           To implement TLS and SSL protocols
+tty	                           Provides classes used by a text terminal
+url	                           To parse URL strings
+util	                         To access utility functions
+v8	                           To access information about V8 (the JavaScript engine)
+vm	                           To compile JavaScript code in a virtual machine
+zlib	                         To compress or decompress files
+------------------------------------------------------------------------------------------------

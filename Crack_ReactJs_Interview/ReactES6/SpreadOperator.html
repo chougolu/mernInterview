@@ -1,0 +1,25 @@
+React ES6 Spread Operator
+
+With the help of spread operator we can concat two array:
+Example:
+var arr1 = [1,2,3,4,5];
+var arr2 = [6,7,8,9,10];
+
+var arr3 = [...arr1,...arr2];
+
+--------------------------------------------------------------------------------
+
+Also with the help of spread operator we can concat two object:
+Example:
+var obj1 = {"name":"Golu"};
+var obj2 = {"lastName":"Choudhary"};
+
+var obj3 = {...obj1,...obj2};
+
+//swapping two array without any third array.
+<script>
+    var arr1 = [1,2,3,4];
+    var arr2 = [5,6,7,8];
+    [arr1,arr2] = [arr2,arr1]
+    console.log(arr1,arr2)
+</script>

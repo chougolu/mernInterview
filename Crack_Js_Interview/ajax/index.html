@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+    <style>
+        .box{
+            width: 250px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box" id="data"></div>
+        <button class="btn btn-success" onclick="getData()">Get data</button>
+    </div>
+    <!-- 
+        Ajax :
+             Asynchronous javascript and XML(Extended mark-up language).
+
+        client----(XMLHttpRequest)----(Ajax)----Server
+        Ajax --- 5 properties
+        3 Response handle
+        2 Request send
+    -->
+
+    <script>
+        function getData() {
+            var obj = new XMLHttpRequest();
+            obj.onreadystatechange = function (){
+                //get data from server.
+                if(obj.readyState == 4){
+                    document.getElementById('data').innerHTML = obj.responseText;
+                }
+            }
+            obj.open('GET', 'img.html', true);
+            obj.send();
+        }
+    </script>
+    
+</body>
+</html>

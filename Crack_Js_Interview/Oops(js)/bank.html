@@ -1,0 +1,32 @@
+<script type="text/javascript">
+
+	// Oops - object oriented programming system.
+	
+    class Bank {
+        //Properties.
+        bankName = "";
+        bankHolder = "";
+        accountNumber = "";
+        amount = "";
+
+        //Methods.
+        openAccount(b_name,b_holder,b_acc_number,b_amount){
+            this.bankName = b_name;
+            this.bankHolder = b_holder;
+            this.accountNumber = b_acc_number;
+            this.amount = b_amount;
+        }
+        checkAccount(){
+            console.log(this.bankName,this.bankHolder,this.accountNumber,this.amount);
+        }
+        DebitAmmount(debit_ammount){
+            this.amount -= debit_ammount;
+        }
+        CreditAmmount(credit_ammount){
+            this.amount += credit_ammount;
+        }
+    }
+
+    //create a object.
+    var obj = new Bank();
+</script>

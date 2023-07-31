@@ -1,0 +1,193 @@
+
+=> JavaScript Date Objects
+
+JavaScript Date Objects let us work with dates:
+Wed Apr 26 2023 10:45:01 GMT+0530 (India Standard Time)
+
+JavaScript new Date()
+new Date() creates a date object with the current date and time:
+
+Example:
+const d = new Date(); //Wed Apr 26 2023 11:00:16 GMT+0530 (India Standard Time)
+
+var date = new Date();
+document.write(date); //Wed Apr 26 2023 11:00:16 GMT+0530 (India Standard Time)
+document.write('</br>');
+document.write('only date :' +date.getDate()); //only date :26
+document.write('</br>');
+document.write('only day :' +date.getDay()); //only day :3
+document.write('</br>');
+document.write('only year :' +date.getFullYear()); //only year :2023
+document.write('</br>');
+document.write('only hours :' +date.getHours()); //only hours :11
+document.write('</br>');
+document.write('only milli seconds :' +date.getMilliseconds()); //only milli seconds :500
+document.write('</br>');
+document.write('only minutes :' +date.getMinutes()); //only minutes :0
+document.write('</br>');
+document.write('only months :' +date.getMonth()); //only months :3
+document.write('</br>');
+document.write('only time :' +date.getTime()); //only time :1682487016500
+document.write('</br>');
+document.write('only UTCdate :' +date.getUTCDate()); //only UTCdate :26
+document.write('</br>');
+document.write('only UTCday :' +date.getUTCDay()); //only UTCday :3
+document.write('</br>');
+
+
+Note:
+JavaScript counts days from 0 to 5:
+
+0 = Sunday
+1 = Monday
+2 = Tuesday
+3 = Wednesday
+4 = Thursday
+5 = Friday
+6 = Saturday
+
+Note:
+JavaScript counts months from 0 to 11:
+
+0 = january
+1 = february
+2 = march
+3 = april
+4 = may
+5 = june
+6 = july
+7 = august
+8 = september
+9 = octomber
+10 = november
+11 = december
+
+Now the time is: 1682486832131 milliseconds past January 01, 1970
+
+
+JavaScript Set Date Methods:
+Set Date methods let you set date values (years, months, days, hours, minutes, seconds, milliseconds) for a Date Object.
+
+Set Date Methods
+Set Date methods are used for setting a part of a date:
+
+Method	Description:
+setDate()	      Set the day as a number (1-31)
+setFullYear()	  Set the year (optionally month and day)
+setHours()	      Set the hour (0-23)
+setMilliseconds() Set the milliseconds (0-999)
+setMinutes()	  Set the minutes (0-59)
+setMonth()	      Set the month (0-11)
+setSeconds()	  Set the seconds (0-59)
+setTime()	      Set the time (milliseconds since January 1, 1970)
+
+Example:
+var date = new Date();
+date.setYear(2022)
+document.write(date); //Tue Apr 26 2022 11:30:39 GMT+0530 (India Standard Time)
+
+
+------------------------------------------------------------------------------------------
+
+
+=> JavaScript Math Object
+The JavaScript Math object allows you to perform mathematical tasks on numbers.
+
+Example:
+document.write(Math.PI); //3.141592653589793
+
+The Math Object:
+Unlike other objects, the Math object has no constructor.
+The Math object is static.
+All methods and properties can be used without creating a Math object first.
+
+Number to Integer
+There are 4 common methods to round a number to an integer:
+
+
+1) Math.round()
+Math.round(x) returns the nearest integer:
+Example:
+document.write(Math.round(4.40)); //4
+document.write(Math.round(4.49)); //4
+document.write(Math.round(4.50)); //5
+document.write(Math.round(4.65)); //5
+
+2) Math.ceil()
+Math.ceil(x) returns the value of x rounded up to its nearest integer:
+Example:
+document.write(Math.ceil(4.40)); //5
+document.write(Math.ceil(4.49)); //5
+document.write(Math.ceil(4.50)); //5
+document.write(Math.ceil(4.65)); //5
+
+3) Math.floor()
+Math.floor(x) returns the value of x rounded down to its nearest integer:
+Example:
+document.write(Math.floor(4.9)); //4
+document.write(Math.floor(4.7)); //4
+document.write(Math.floor(4.4)); //4
+document.write(Math.floor(4.2)); //4
+document.write(Math.floor(-4.2)); //5
+
+4)Math.trunc()
+Math.trunc(x) returns the integer part of x:
+Example:
+document.write(Math.trunc(4.9)); //4
+document.write(Math.trunc(4.7)); //4
+document.write(Math.trunc(4.4)); //4
+document.write(Math.trunc(4.2); //4
+document.write(Math.trunc(-4.2)); //-4
+
+5) Math.sign()
+Math.sign(x) returns if x is negative, null or positive:
+Example:
+document.write(Math.sign(-4)); //-1
+document.write(Math.sign(0)); //0
+document.write(Math.sign(4)); //1
+
+6) Math.pow()
+Math.pow(x, y) returns the value of x to the power of y:
+Example:
+Math.pow(8, 2); //64(8x8)
+Math.pow(8, 3); //512(8x8x8)
+pow---power
+
+7) Math.sqrt()
+Math.sqrt(x) returns the square root of x:
+Example:
+Math.sqrt(64); //8
+Math.sqrt(81); //9
+sq + rt = squre & root
+
+8) Math.cbrt()
+Math.sqrt(x) returns the square root of x:
+Example:
+Math.cbrt(64); //4
+Math.cbrt(27); //3
+cb + rt = cube & root
+
+9) Math.abs()
+Math.abs(x) returns the absolute (positive) value of x:
+Example:
+Math.abs(-4.7); //4.7
+
+10) Math.min() and Math.max()
+Math.min() and Math.max() can be used to find the lowest or highest value in a list of arguments:
+Example:
+Math.min(0, 150, 30, 20, -8, -200); //-200
+Example:
+Math.max(0, 150, 30, 20, -8, -200); 150
+
+11) Math.random()
+Math.random() returns a random number between 0 (inclusive), and 1 (exclusive):
+Example:
+Math.random(); //0.08535986454659317
+
+12) The Math.log() Method
+Math.log(x) returns the natural logarithm of x.
+The natural logarithm returns the time needed to reach a certain level of growth:
+Examples:
+Math.log(1); //0
+Math.log(2); //0.6931471805599453
+Math.log(3); //1.0986122886681096

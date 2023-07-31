@@ -1,0 +1,493 @@
+<script>
+    //1 . Write a programme to check the year is leap year or not.
+    // Note:-
+    // Leap year comes once in 4 years.
+    // example:- 2000,2004,2008,2012,2016
+    //parseInt()--> convert string into integer/number.
+
+    // var year = parseInt(prompt('Enter year !'));
+    // if(year%4===0){
+    //     console.log(`${year} is leap year.`)
+    // }else{
+    //     console.log(`${year} is not leap year.`)
+    // }
+
+    //--------------------------------------------------------------
+
+    //2 . Write a programme to check vowel or consonant.
+    // Note:-
+    // Vowel-a,e,i,o,u
+    // consonant-b,c,d,f,g.....
+
+    // var letter = prompt('Enter a letter !');
+
+    // if(letter=='a'){
+    //     console.log(`${letter} is vowel.`);
+    // } else if(letter=='e'){
+    //     console.log(`${letter} is vowel.`);
+    // } else if(letter=='i'){
+    //     console.log(`${letter} is vowel.`);
+    // } else if(letter=='o'){
+    //     console.log(`${letter} is vowel.`);
+    // } else if(letter=='u'){
+    //     console.log(`${letter} is vowel.`);
+    // } else{
+    //     console.log(`${letter} is consonant.`);
+    // }
+
+    //--------------------------------------------------------------
+
+    //3 . Write a programme to convert string into array.
+    // Note:-
+    // split() --> convert srting into array.
+
+    // var string = "Raju is a good boy"
+    // var array = string.split(" ")
+    // console.log(array); //0-Raju, 1-is, 2-a, 3-good, 4-boy
+        
+    //--------------------------------------------------------------
+
+    //4 . Write a programme to convert array into string.
+    // Note:-
+    // toString() --> convert array into string.
+
+    // var array = ["Raju","is","a","good","boy"]
+    // var string = array.toString();
+    // console.log(string); //Raju,is,a,good,boy
+
+    //--------------------------------------------------------------
+
+    //5. Write a programme to find largest and lowest number from an array.
+
+    // var array = [3,2,4,6,5,9,10,100,1];
+    // array.sort(function(a,b){
+    //     return a-b; //1, 2, 3, 4, 5, 6, 9, 10, 100
+    // });
+    // var largest = array[array.length-1];
+    // var lowest = array[0];
+
+    // console.log(`lowest number is ${lowest} and largest is ${largest} from ${array}.`);
+    // //lowest number is 1 and largest is 100 from 1,2,3,4,5,6,9,10,100.
+
+    //--------------------------------------------------------------
+
+    //6. Write a programme to display table of 2 usimg map function.
+
+    // var array = [1,2,3,4,5,6,7,8,9,10];
+
+    // var newArr = array.map((item)=>{
+    //     return item*2;
+    // });
+    // console.log(newArr); //2, 4, 6, 8, 10, 12, 14, 16, 18, 20
+
+    //--------------------------------------------------------------
+
+    //7. Write a programme add and remove item  from an array at any position.
+
+    // var array = ["aniket","kajal","akshat","ronny","tonny"];
+    // array.splice(1,2,"sapna","akash"); //array.splice(startIndex, howmanyRemove, item1, ....., itemX)
+    // console.log(array); //['aniket', 'sapna', 'akash', 'ronny', 'tonny']
+
+    //--------------------------------------------------------------
+
+    //8. Write a programme to sort array in decending and ascending order.
+
+    // var array = [2,1,4,3,6,5,8,7,10,45,20];
+    // array.sort(function(a,b){
+    //     return a-b; //[1, 2, 3, 4, 5, 6, 7, 8, 10, 20, 45]
+    //     // return b-a; //[45, 20, 10, 8, 7, 6, 5, 4, 3, 2, 1]
+    // });
+    // console.log(array);
+
+    //--------------------------------------------------------------
+
+    //9. Write a programme to reverse the digit.
+
+    // var number = 123456789;
+    // console.log(parseInt(String(number).split('').reverse().join('')));
+
+    //--------------------------------------------------------------
+
+    //10. Print all user name from an array with name is start by A.
+
+    // var array = ["Anil","Rajesh","Akshay","Rahul","Ajay","Pavan"];
+
+    // var newArr = array.filter((item)=>{
+    //     return item.startsWith("A")
+    // });
+
+    // console.log(newArr); //['Anil', 'Akshay', 'Ajay']
+
+    //--------------------------------------------------------------
+
+    //11. How to find the number is prime or not.
+    //prime number:-
+    //a number that can be divided exactly only by itself and 1, for example 7, 17 and 41
+    //List of Prime Numbers Up to 100 = 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41,
+    //  43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97.
+
+    // var number = parseInt(prompt('Enter number.'));
+
+    // if((number>2)%2===0 ||   (number>3)%3===0 || number!=1){
+    //     console.log(`${number} is not a prime number.`);
+    // }else{
+    //     console.log(`${number} is a prime number.`);
+
+    //--------------------------------------------------------------
+
+    // 12. Check the given number is positive or negative ?
+
+    // var number = parseInt(prompt("Enter any number."));
+
+    // if(number>0){
+    //     console.log(`${number} is positive number.`);
+    // }else if(number<0){
+    //     console.log(`${number} is negative number.`);
+    // }else{
+    //     console.log(`${number} is neither positive nor negative.`);
+    // }
+
+    //--------------------------------------------------------------
+
+    // 13. Write a program to find maximum number between three number ?
+
+    // var num1 = parseInt(prompt('Enter 1st number.'));
+    // var num2 = parseInt(prompt('Enter 2nd number.'));
+    // var num3 = parseInt(prompt('Enter 3rd number.'));
+
+    // if(num1>=num2 && num1>=num3){
+    //     console.log(`${num1} is greater then ${num2},${num3}`);
+    // }else if(num2>=num1 && num2>=num3){
+    //     console.log(`${num2} is greater then ${num1},${num3}`);
+    // }else{
+    //     console.log(`${num3} is greater then ${num1},${num2}`);
+    // }
+
+    //--------------------------------------------------------------
+
+    //14. write a programe to get even or odd number in an array.
+
+    // var array = [1,2,3,4,5,6,7,8,9,10];
+
+    // var even = [];
+    // var odd = [];
+
+    // for(let x of array){
+    //     (x%2==0) ? even.push(x) : odd.push(x)
+    // }
+
+    // console.log(odd); //1, 3, 5, 7, 9
+    // console.log(even); //2, 4, 6, 8, 10
+
+    //--------------------------------------------------------------
+
+    //15. write a programe to check how many odd and even in an array.
+
+    // var array = [1,2,3,4,5,6,7,8,9,10];
+
+    // var even = [];
+    // var odd = [];
+
+    // for(let x of array){
+    //     (x%2==0) ? even.push(x) : odd.push(x)
+    // }
+
+    // console.log(`${odd.length}(${odd}) odd and ${even.length}(${even}) even in ${array}.`);
+    //5(1,3,5,7,9) odd and 5(2,4,6,8,10) even in 1,2,3,4,5,6,7,8,9,10.
+
+    //--------------------------------------------------------------
+
+    //16. Write a program to sum of all even odd number from an array.
+
+    // var array = [1,2,3,4,5,6,7,8,9,10];
+
+    // var even = [];
+    // var odd = [];
+
+    // for(let x of array){
+    //     (x%2==0) ? even.push(x) : odd.push(x)
+    // }
+
+    // var calEven = 0;
+    // for(let e of even){
+    //     calEven = calEven + e;
+    // }
+    // console.log(calEven); //30
+
+    // var calOdd = 0;
+    // for(let o of odd){
+    //     calOdd = calOdd + o;
+    // }
+    // console.log(calOdd); //25
+
+    //--------------------------------------------------------------
+
+    //17. How to remove duplicate from an array.
+    // var array = [1,2,3,1,4,5,4,3];
+    // var newArr = array.filter((item,index)=>{
+    //     return array.indexOf(item) === index;
+    // });
+    // console.log(newArr); //1,2,3,4,5
+
+    
+
+    //--------------------------------------------------------------
+
+    //18. Write a programe to sum of all duplicate values from an array.
+
+    // var array = [1,2,3,1,4,5,4,3];
+    // var newArr = array.filter((item,index)=>{
+    //     return array.indexOf(item) !== index;
+    // });
+    // console.log(newArr); //1,4,3
+    // var sum = 0;
+    // for(let val of newArr){
+    //     sum = sum + val;
+    // }
+    // console.log(sum); //8
+
+    //--------------------------------------------------------------
+
+    //19. Write a js program to reverse the string without inbuilt function.
+
+    // var str = "choudhary";
+    // var str2 = "";
+
+    // for(let i = str.length-1; i>=0; i--){
+    //     str2 += str[i]
+    // }
+    // console.log(str2); //yrahduohc
+
+    //--------------------------------------------------------------
+
+    //20. Written the number of vowels in a given string.
+    //  var a = "aertyiogh";
+
+    //--------------------------------------------------------------
+
+    //  21. How to get the longest string in an array using JavaScript ?
+
+    // var array = ["learn","Data","Structures","with","Javascript"];
+
+    // array.sort(function(a,b){
+    //     return a.length-b.length;
+    // });
+    // console.log(array);
+    // console.log(`The longest string : ${array[array.length-1]} and smallest string :${array[0]}`);
+    //The longest string : Javascript and smallest string :Data
+
+    //--------------------------------------------------------------
+
+    //22. Get the first and last item in an array using JavaScript ?
+
+    // var array = [1,2,3,4,5,6,7,8,9,10];
+
+    // console.log(`The first item : ${array[0]} and last item : ${array[array.length-1]} in ${array}`);
+    //The first item : 1 and last item : 10 in 1,2,3,4,5,6,7,8,9,10
+
+    //--------------------------------------------------------------
+
+    //23. How to get keys from javascript object ?
+    // var stData = {
+    //     "name":"Golu",
+    //     "lastName":"Choudhary",
+    //     "age":22
+    // }
+
+    // console.log(Object.keys(stData)); // ['name', 'lastName', 'age']
+
+    //--------------------------------------------------------------
+
+    //24. How to Extract Specific Key's Values From an Array of Objects in JavaScript?
+
+    // const users = [
+    //     { 
+    //         "name1": 'Golu',
+    //         "age1": 22
+    //     },
+    //     { 
+    //         "name2": 'Pavan',
+    //         "age2": 28
+    //     },
+    //     { 
+    //         "name3": 'Shubham',
+    //         "age3": 23
+    //     },
+    //     { 
+    //         "name4": 'Arun',
+    //         "age4": 21
+    //     }
+    // ];
+
+    //--------------------------------------------------------------
+    
+    //25. How to print-
+    // 1
+    // 12
+    // 123
+    // 1234
+    // 12345
+
+    // row=5
+    // column=5
+
+    // for(let a = 1; a<=5; a++){
+    //     for(b=1; b<=a; b++){
+    //         document.write(b)
+    //     }
+    //     document.write('</br>')
+    // }
+
+    //--------------------------------------------------------------
+
+    //26. How to print-
+    // 1
+    // 22
+    // 333
+    // 4444
+    // 55555
+
+    // row=5
+    // column=5
+
+    // for(let a = 1; a<=5; a++){
+    //     for(let b = 1; b <= a; b++){
+    //         document.write(a);
+    //     }
+    //     document.write('</br>');
+    // }
+
+    //--------------------------------------------------------------
+
+    //27. How to print-
+    // 11111
+    // 2222
+    // 333
+    // 44
+    // 5
+
+    // row=5
+    // column=5
+
+    // for(let row = 1; row<=5; row++){
+    //     for(let col = row; col<=5; col++){
+    //         document.write(row);
+    //     }
+    //     document.write('</br>');
+        
+    // }
+
+    //--------------------------------------------------------------
+
+    //28. Remove nulise value from an array.
+    // var array = ["Rajesh",null,"Shiva",undefined,"Pavan",""];
+    // var newArr = array.filter((item,index)=>{
+    //     return item;
+    // });
+    // console.log(newArr); //Rajesh,Shiva,Pavan
+    
+    //--------------------------------------------------------------
+
+    //29. How to print-
+    // 54321
+    // 4321
+    // 321
+    // 21
+    // 1
+
+    // row=5
+    // column=5
+
+    // for(let row = 5; row>=1; row--){
+    //     for(let col = row; col>=1; col--){
+    //         document.write(col);
+    //     }
+    //     document.write('</br>');
+        
+    // }
+
+    //--------------------------------------------------------------
+
+    //30. How to print-
+    // 55555
+    // 4444
+    // 333
+    // 22
+    // 1
+
+    // row=5
+    // column=5
+
+    // for(let row = 5; row>=1; row--){
+    //     for(let col = row; col>=1; col--){
+    //         document.write(row);
+    //     }
+    //     document.write('</br>');
+        
+    // }
+
+    //--------------------------------------------------------------
+
+     //31. How to print-
+    // *
+    // **
+    // ***
+    // ****
+    // *****
+
+    // for( var col = 1; col<=5; col++){
+    //     // console.log(col);
+    //     for(var row = 1; row <= col; row++){
+    //         document.write("*")
+    //     }
+    //     document.write('<br/>')
+    // }
+
+    //--------------------------------------------------------------
+
+     //32. How to print-
+    // *****
+    // ****
+    // ***
+    // **
+    // *
+    // document.write("testing...")
+
+    // for ( var col = 5; col>=1; col--) {
+    //     // document.write(col);
+    //     for(var row = 1; row <= col; row++){
+    //         document.write("*")
+    //     }
+    //     document.write('<br/>')
+    // }
+
+
+    // 1) How to find the number is prime or not.
+
+    //20. Written the number of vowels in a given string.
+    //  var a = "aertyiogh";
+
+
+    // for( var col = 1; col<=5; col++){
+    //     // console.log(col)
+    //     for(var row = 1; row<=col; row++){
+    //         document.write("*");
+    //     }
+    //     document.write('<br/>');
+    // }
+
+    for( var col = 5; col>=1; col--){
+        // console.log(col)
+        for(var row = 1; row <= col; row++){
+            document.write("*");
+        }
+        document.write('<br/>');
+    }
+    
+
+    
+
+
+
+
+</script>

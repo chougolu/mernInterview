@@ -1,0 +1,105 @@
+What is MySQL?
+
+MySQL is a relational database management system.
+MySQL is open-source.
+MySQL is free.
+MySQL is ideal for both small and large applications.
+MySQL is very fast, reliable, scalable, and easy to use.
+MySQL is cross-platform.
+MySQL is compliant with the ANSI SQL standard.
+MySQL was first released in 1995.
+MySQL is developed, distributed, and supported by Oracle Corporation.
+MySQL is named after co-founder Monty Widenius's daughter: My
+
+
+-----------------------------------------------------------------------------------------
+
+
+What is RDBMS?
+
+RDBMS stands for Relational Database Management System.
+RDBMS is a program used to maintain a relational database.
+
+
+-----------------------------------------------------------------------------------------
+
+
+What is SQL?
+
+SQL is the standard language for dealing with Relational Databases.
+SQL is used to insert, search, update, and delete database records.
+
+
+-----------------------------------------------------------------------------------------
+
+
+Some of The Most Important SQL Commands
+
+SELECT                    -                    extracts data from a database
+UPDATE                    -                    updates data in a database
+DELETE                    -                    deletes data from a database
+INSERT INTO               -                    inserts new data into a database
+CREATE DATABASE           -                    creates a new database
+ALTER DATABASE            -                    modifies a database
+CREATE TABLE              -                    creates a new table
+ALTER TABLE               -                    modifies a table
+DROP TABLE                -                    deletes a table
+CREATE INDEX              -                    creates an index (search key)
+DROP INDEX                -                    deletes an index
+
+
+-----------------------------------------------------------------------------------------
+
+
+1) The MySQL SELECT Statement:-
+
+ SELECT column1, column2, ... FROM table_name;
+ (Here, column1, column2, ... are the field names of the table you want to select data from)
+
+ If you want to select all the fields available in the table, use the following syntax:
+ SELECT * FROM table_name;
+
+The MySQL WHERE Clause:-
+
+The WHERE clause is used to filter records.
+It is used to extract only those records that fulfill a specified condition.
+
+WHERE Syntax :
+SELECT column1, column2, ...FROM table_name WHERE condition;
+
+
+-----------------------------------------------------------------------------------------
+
+
+MySQL AND, OR and NOT Operators :
+
+AND Syntax :
+SELECT column1, column2, ... FROM table_name WHERE condition1 AND condition2 AND condition3 ...;
+
+OR Syntax :
+SELECT column1, column2, ... FROM table_name WHERE condition1 OR condition2 OR condition3 ...;
+
+NOT Syntax :
+SELECT column1, column2, ... FROM table_name WHERE NOT condition;
+
+
+-----------------------------------------------------------------------------------------
+
+
+2) MySQL INSERT INTO Statement :
+   The INSERT INTO statement is used to insert new records in a table.
+
+   INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...);
+   {
+    INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+    VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+   }
+
+   INSERT INTO table_name VALUES (value1, value2, value3, ...);
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+

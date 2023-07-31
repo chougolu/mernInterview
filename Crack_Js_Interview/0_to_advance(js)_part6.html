@@ -1,0 +1,367 @@
+<!-- 
+
+BODMAS stands for Bracket, Of, Division, Multiplication, Addition, and Subtraction.
+B --- Brackets open
+O --- Of
+D --- Division
+M --- Multiplication
+A --- Addition
+S --- Subtraction
+
+=> JavaScript Operator Precedence:
+
+Operator precedence describes the order in which operations are performed in an arithmetic expression.
+Multiplication (*) and division (/) have higher precedence than addition (+) and subtraction (-).
+
+As in traditional mathematics, multiplication is done first:
+let x = 100 + 50 * 3; //250(100+150=250)
+
+When using parentheses, operations inside the parentheses are computed first:
+let x = (100 + 50) * 3; //450(150*3=450)
+
+Operations with the same precedence (like * and /) are computed from left to right:
+let x = 100 / 50 * 3; //6(2*3=6)
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+
+
+=> JavaScript Scope
+Scope determines the accessibility (visibility) of variables.
+
+JavaScript has 3 types of scope:
+
+1) Block scope
+2) Function scope
+3) Global scope
+
+
+1) Block Scope:
+Before ES6 (2015), JavaScript had only Global Scope and Function Scope.
+ES6 introduced two important new JavaScript keywords: let and const.
+These two keywords provide Block Scope in JavaScript.
+Variables declared inside a { } block cannot be accessed from outside the block:
+
+Example:
+{
+  let x = 2;
+}
+console.log(x);
+// x can NOT be used here(caught ReferenceError: x is not defined)
+
+
+{
+  const x = 2;
+}
+console.log(x);
+// x can NOT be used here(caught ReferenceError: x is not defined)
+
+{
+  var x = 2;
+}
+console.log(x);
+// x can be used here
+
+
+2) Local Scope:
+Variables declared within a JavaScript function, become LOCAL to the function.
+Example:
+// code here can not use carName
+function myFunction() {
+  let carName = "Volvo";
+  // code here can use carName
+}
+// code here can not use carName
+
+
+3) Function Scope:
+JavaScript has function scope: Each function creates a new scope.
+Variables defined inside a function are not accessible (visible) from outside the function.
+Variables declared with var, let and const are quite similar when declared inside a function.
+They all have Function Scope:
+Example:
+function myFunction() {
+  var carName = "Volvo";   // Function Scope
+}
+
+function myFunction() {
+  let carName = "Volvo";   // Function Scope
+}
+
+function myFunction() {
+  const carName = "Volvo";   // Function Scope
+}
+
+
+4) Global Scope:
+Variables declared Globally (outside any function) have Global Scope.
+Global variables can be accessed from anywhere in a JavaScript program.
+Variables declared with var, let and const are quite similar when declared outside a block.
+
+They all have Global Scope:
+Example:
+var x = 2;       // Global scope
+let x = 2;       // Global scope
+const x = 2;     // Global scope
+
+
+
+----------------------------------------------------------------------------------------
+
+
+
+=> JavaScript Hoisting:
+Hoisting is JavaScript's default behavior of moving declarations to the top.
+
+Example:
+//var
+carName = "Volvo";
+var carName;
+console.log(carName); //Volvo
+
+//let
+carName = "Volvo";
+let carName;
+console.log(carName); //ReferenceError
+
+//const
+carName = "Volvo";
+const carName;
+console.log(carName); //ReferenceError
+
+Note:
+     Declare Your Variables At the Top !
+Hoisting is (to many developers) an unknown or overlooked behavior of JavaScript.
+If a developer doesn't understand hoisting, programs may contain bugs (errors).
+To avoid bugs, always declare all variables at the beginning of every scope.
+Since this is how JavaScript interprets the code, it is always a good rule.
+
+
+
+--------------------------------------------------------------------------------------------
+
+
+
+=> JavaScript Use Strict:
+"use strict"; Defines that JavaScript code should be executed in "strict mode".
+
+car = "Fortuner";
+console.log(car); //Fortuner
+
+"use strict";
+
+//Wrong
+car = "Fortuner";
+console.log(car); // This will cause an error
+
+//Right
+var car = "Fortuner";
+console.log(car); //Fortuner
+
+
+
+------------------------------------------------------------------------------------------
+
+
+
+=> The JavaScript this Keyword:
+
+In JavaScript, the this keyword refers to an object.
+Which object depends on how this is being invoked (used or called).
+The this keyword refers to different objects depending on how it is used:
+
+In an object method, this refers to the object.
+
+Alone, this refers to the global object.
+
+In a function, this refers to the global object.
+
+In a function, in strict mode, this is undefined.
+
+In an event, this refers to the element that received the event.
+
+Methods like call(), apply(), and bind() can refer this to any object.
+
+Example:
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+console.log(person.fullName()); //John Doe
+
+
+
+------------------------------------------------------------------------------------------
+
+
+
+=> JavaScript Arrow Function:
+Arrow functions were introduced in ES6-2015.
+
+Arrow functions allow us to write shorter function syntax:
+
+Example:
+
+Before Arrow Function:
+
+hello = function(a,b) {
+  return a*b;
+}
+console.log(hello(10,20)); //200
+
+---------------------------------------------
+
+With Arrow Function:
+
+var myFun = (a,b) =>{
+   return a*b;
+}
+console.log(myFun(10,20)); //200
+
+---------------------------------------------
+
+Arrow Functions Return Value by Default:
+Example:
+hello = (a,b) => a*b;
+console.log(hello(10,20)); //200
+
+Note: This works only if the function has only one statement.
+
+---------------------------------------------
+
+Arrow Function Without Parentheses:
+Example:
+hello = val => "Hello " + val;
+console.log(hello("Golu")); //Hello Golu
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+
+=> JavaScript Modules:
+Modules:
+
+JavaScript modules allow you to break up your code into separate files.
+This makes it easier to maintain a code-base.
+Modules are imported from external files with the import statement.
+Modules also rely on type="module" in the <script> tag.
+
+Example:
+
+//    import message from "./message.js";
+
+
+--------------------------------------------
+
+Named Exports:
+Let us create a file named person.js, and fill it with the things we want to export.
+You can create named exports two ways. In-line individually, or all at once at the bottom.
+
+In-line individually:
+person.js
+
+export const name = "Jesse";
+export const age = 40;
+
+All at once at the bottom:
+person.js
+
+const name = "Jesse";
+const age = 40;
+
+export {name, age};
+
+
+Import:
+You can import modules into a file in two ways, based on if they are named exports or default exports.
+Named exports are constructed using curly braces. Default exports are not.
+
+Import from named exports
+Import named exports from the file person.js:
+
+import { name, age } from "./person.js";
+
+--------------------------------------------
+
+Default Exports
+Let us create another file, named message.js, and use it for demonstrating default export.
+
+You can only have one default export in a file.
+
+Example:
+message.js
+
+const message = () => {
+const name = "Jesse";
+const age = 40;
+return name + ' is ' + age + 'years old.';
+};
+
+export default message;
+
+
+Import from default exports
+Import a default export from the file message.js:
+
+import message from "./message.js";
+
+Note:
+Modules only work with the HTTP(s) protocol.
+A web-page opened via the file:// protocol cannot use import / export.
+
+
+-------------------------------------------------------------------------------------------
+
+
+=>JavaScript JSON:
+
+JSON is a format for storing and transporting data.
+JSON is often used when data is sent from a server to a web page.
+
+What is JSON?
+JSON stands for JavaScript Object Notation
+JSON is a lightweight data interchange format
+JSON is language independent *
+JSON is "self-describing" and easy to understand
+
+JSON Example:
+This JSON syntax defines an employees object: an array of 3 employee records (objects):
+
+{
+"employees":[
+  {"firstName":"John", "lastName":"Doe"},
+  {"firstName":"Anna", "lastName":"Smith"},
+  {"firstName":"Peter", "lastName":"Jones"}
+]
+}
+
+---------------------------------------------------
+
+JSON Syntax Rules:
+1)Data is in name/value pairs
+2)Data is separated by commas
+3)Curly braces hold objects
+4)Square brackets hold arrays
+
+---------------------------------------------------
+              
+Converting a JSON Text to a JavaScript Object
+JSON.parse(text);
+
+---------------------------------------------------
+
+=> eval():
+The eval() function evaluates JavaScript code represented as a string and returns its completion value. The source is parsed as a script.
+
+eval('2 + 2');
+// Expected output: 4
+
+ -->

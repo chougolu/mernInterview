@@ -1,0 +1,21 @@
+<script type="text/javascript">
+	class A {
+		getA(){
+			console.log("getA called.");
+		}
+	}
+	class B extends A {
+		getB(){
+			console.log("getB called.");
+		}
+	}
+	class C extends B {
+		getC(){
+			console.log("getC called.");
+		}
+	}
+	let obj = new C();
+	obj.getA();
+	obj.getB();
+	obj.getC();
+</script>

@@ -1,0 +1,23 @@
+<!-- Multiple inheritence :-javascript does not supported multiple inheritence. -->
+<script type="text/javascript">
+	class A {
+		getA(){
+			console.log("A is called.");
+		}
+	}
+	class B {
+		getB(){
+			console.log("B is called.");
+		}
+	}
+	class C extends A,B {
+		getC(){
+			console.log("C is called.");
+		}
+	}
+	let obj = new C();
+	obj.getA();
+	obj.getB();
+	obj.getC();
+	// Output :- ncaught SyntaxError: Unexpected token ','
+</script>

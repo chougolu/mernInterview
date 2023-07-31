@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	class A {
+		constructor(){
+			console.log("A is called.")
+		}
+	}
+	class B extends A {
+		constructor(){
+			super();//(super :- parent cls ke constructor ko child cls m inherit krt hai.)
+			console.log("B is called.")
+		}
+	}
+	let obj = new B();
+</script>

@@ -1,0 +1,15 @@
+<script type="text/javascript">
+	class A{
+		demo(a,b){
+			console.log(a+b,"in a class.")
+		}
+	}
+	class B extends A{
+		demo(a,b){
+			super.demo(2,3)
+			console.log(a+b,"in b class.")
+		}
+	}
+	let obj = new B();
+	obj.demo(10,20);
+</script>
